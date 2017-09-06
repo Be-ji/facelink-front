@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { UtilisateurListeComponent } from "./utilisateur-liste/utilisateur-liste.component";
 import { UtilisateurService } from "./services/utilisateur.service";
 import { HttpModule } from "@angular/http";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [
     AppComponent, 
+    NavbarComponent,
     UtilisateurListeComponent
   ],
   imports: [
