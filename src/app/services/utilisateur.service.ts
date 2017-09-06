@@ -14,7 +14,6 @@ export class UtilisateurService {
   constructor(private http: Http) { }
   
   getUtilisateurs():Observable<Utilisateur[]> {
-
      return this.http.get(this.url)
       .map((response: Response) => response.json());
   }
