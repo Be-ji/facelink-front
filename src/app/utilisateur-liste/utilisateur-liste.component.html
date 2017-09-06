@@ -1,0 +1,6 @@
+<ul> 
+    <li *ngFor="let utilisateur of utilisateurs | slice:0:10">
+      <span>Nom : {{utilisateur.nom}}<br/>
+        Prénom : {{utilisateur.prenom}}</span>
+    </li>
+  </ul>
