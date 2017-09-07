@@ -1,6 +1,64 @@
-<ul> 
-    <li *ngFor="let utilisateur of utilisateurs | slice:0:10">
+<!-- <div>
+  <ul>
+    <li *ngFor="let utilisateur of utilisateurs">
       <span>Nom : {{utilisateur.nom}}<br/>
         Prénom : {{utilisateur.prenom}}</span>
     </li>
   </ul>
+</div> -->
+
+<div class="col-md-10 col-md-offset-1">
+
+  <div class="panel panel-default panel-table">
+    <div class="panel-heading panel-heading-custom">
+      <div class="row">
+          <h2 class="text-center">Liste des utilisateurs</h2>
+      </div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered table-list text-center">
+        <thead>
+          <tr>
+            <th class="hidden-xs text-center">ID</th>
+            <th class="text-center">Identité</th>
+            <th class="text-center">Adresse Email</th>
+            <th class="text-center"><em class="fa fa-cog"></em></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let utilisateur of utilisateurs">
+            <td class="hidden-xs">{{utilisateur.id}}</td>
+            <td>{{utilisateur.prenom}} {{utilisateur.nom}} </td>
+            <td>{{utilisateur.email}}</td>
+            <td align="center">
+                <a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-eye-open"></span> Détails
+                  </a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="panel-footer">
+      <div class="row">
+        <div class="col col-xs-4">Page 1 of 5
+        </div>
+        <div class="col col-xs-8">
+          <ul class="pagination hidden-xs pull-right">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+          <ul class="pagination visible-xs pull-right">
+            <li><a href="#">«</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

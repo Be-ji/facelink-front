@@ -1,5 +1,13 @@
 export interface Utilisateur {
     id:number;
-    nom:string;
     prenom:string;
+    nom:string;
+    motDePasse:string;
+	droit:number;
+	email:string;
+	statut:string;
+	biographie:string;
+	popularite:number;
+	dateInscription:Date;
+	dateNaissance:Date;
 }

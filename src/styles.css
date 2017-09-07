@@ -4,60 +4,67 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: #fff;
 }
 
-.navbar {
-    height: 80px;
-    opacity: 0.9;
-    border: none;
-}
-.navbar-default {
-    background-color: #373B5B;
+.btn {
+	border-radius: 0px;
 }
 
-
-.navbar-nav li a {
-    padding:0 30px;
-    line-height:80px;
-}
-.navbar-nav li:active {
-    background-color: #202336;
-}
-.navbar-nav li:hover {
-    background-color: #202336;
-}
-.navbar-header a {
-    padding:0 100px;
-    line-height:80px;    
-}
-.navbar-text {
-    padding:0 30px;
-    line-height:80px;
-    margin: 0;
-}
-.rechercher-profil {
-    padding: 30px;
-}
-.navbar-text:hover {
-    background-color: #373B5B;
-}
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:#fff;
-    opacity: 0.8;
-}
-.row:hover {
-    background-color:#fff;
-}
-@media(max-width:750px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FFF;  /*Sets the text hover color on navbar*/
     }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
+    
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+     a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: white; /*BACKGROUND color for active*/
+    background-color: #428bca;
     }
+    
+      .navbar-default {
+        background-color: #428bca;
+        border-color: #FFFFFF;
+        margin:0;
+        border-radius: 0px;
+        border: none;
+    }
+    
+      .dropdown-menu > li > a:hover,
+       .dropdown-menu > li > a:focus {
+        color: #262626;
+       text-decoration: none;
+      background-color: #66CCFF;  /*change color of links in drop down here*/
+       }
+    
+     .nav > li > a:hover,
+     .nav > li > a:focus {
+        text-decoration: none;
+        background-color: silver; /*Change rollover cell color here*/
+      }
+    
+    
+      .navbar-default .navbar-nav > li > a {
+       color: white; /*Change active text color here*/
+        }
+
+.panel > .panel-heading, .panel > .panel-footer {
+    background-image: none;
+    background-color: red;
+    color: white;
+
 }
+
+.jumbotron h1 {
+    font-weight:bold;
+  }
+  
+  .jumbotron .hero-text {
+    padding: 48px 0;
+  }
+  
+  .hero-form {
+    padding: 48px;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    border: 2px #ccc solid;
+  }
