@@ -1,57 +1,78 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 body{
     background:url('../src/app/resources/bg_paysage.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #fff;
+    color: #FFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin-bottom: 200px;
+}
+#footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  height: 200px;
+  background-color: #001331;
+  margin-top: 100px;
+  opacity: 0.9;
+}
+.container-custom {
+  padding-top:100px;
+  padding-bottom: 100px;
 }
 
 .btn {
 	border-radius: 0px;
 }
 
+.custom-h1 {
+  text-shadow: 2px 2px 5px #1A34BA;
+}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #FFF;  /*Sets the text hover color on navbar*/
-    }
+}
     
-    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
-     a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: white; /*BACKGROUND color for active*/
     background-color: #428bca;
-    }
+}
     
-      .navbar-default {
-        background-color: #428bca;
-        border-color: #FFFFFF;
-        margin:0;
-        border-radius: 0px;
-        border: none;
-    }
-    
-      .dropdown-menu > li > a:hover,
-       .dropdown-menu > li > a:focus {
-        color: #262626;
-       text-decoration: none;
-      background-color: #66CCFF;  /*change color of links in drop down here*/
-       }
-    
-     .nav > li > a:hover,
-     .nav > li > a:focus {
-        text-decoration: none;
-        background-color: silver; /*Change rollover cell color here*/
-      }
-    
-    
-      .navbar-default .navbar-nav > li > a {
-       color: white; /*Change active text color here*/
-        }
+.navbar-default {
+  background-color: #001331;
+  margin:0x;
+  padding: 10px 10%;
+  border-radius: 0px;
+  border: none;
+  opacity: 0.9;
+  text-shadow: 2px 2px 5px #1A34BA;
+}
+.navbar-default .navbar-brand {
+      font-size: 40px;
+      color: #fff;
+}
+.navbar-default .navbar-brand:hover {
+  color: #B6D0E7;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+  padding: 10px 20px;
+  font-size: 24px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #B6D0E7;
+}
 
 .panel > .panel-heading, .panel > .panel-footer {
-    background-image: none;
-    background-color: red;
-    color: white;
+    opacity: 0.9;
+}
 
+.jumbotron {
+  background-color:transparent !important;
 }
 
 .jumbotron h1 {
@@ -59,12 +80,24 @@ body{
   }
   
   .jumbotron .hero-text {
-    padding: 48px 0;
+    padding: 50px 0;
   }
   
   .hero-form {
-    padding: 48px;
-    border-radius: 3px;
-    background-color: #f8f8f8;
-    border: 2px #ccc solid;
+    padding: 50px;
+    background-color:transparent !important;
+    border: 1px #ccc solid;
+  }
+  .bg-custom {
+    background-color: #001331;
+    opacity: 0.9;
+    border-radius: 0px;
+    padding: 5px;
+    border:none;
+  }
+  .bg-custom-tr {
+    background-color: #011028;
+    border-radius: 0px;
+    border:none;
+    opacity: 0.9;
   }
