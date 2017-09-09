@@ -1,0 +1,35 @@
+<div class="col-md-10 col-md-offset-1">
+  
+    <div class="panel bg-custom">
+      <div class="panel-heading">
+        <div class="row">
+          <h1 class="text-center">Liste des Utilisateurs</h1>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr class="bg-custom-tr">
+              <th class="text-center">ID</th>
+              <th class="text-center">Identité</th>
+              <th class="text-center">Adresse Email</th>
+              <th class="text-center"><em class="fa fa-cog"></em></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let utilisateur of utilisateurs" class="bg-custom-tr">
+              <td class="text-center">{{utilisateur.id}}</td>
+              <td class="text-center">{{utilisateur.prenom}} {{utilisateur.nom}}</td>
+              <td class="text-center">{{utilisateur.email}}</td>
+              <td class="text-center">
+                <a [routerLink]="['/user', utilisateur.id]" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-eye-open"></span> Détails
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

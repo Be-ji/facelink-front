@@ -3,7 +3,7 @@ html {
   position: relative;
 }
 body{
-    background:url('../src/app/resources/bg_paysage.jpg');
+    background:url('assets/images/bg_paysage.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -1,28 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
-import { AppComponent } from './app.component';
-import { UtilisateurListeComponent } from "./utilisateur-liste/utilisateur-liste.component";
-import { UtilisateurService } from "./services/utilisateur.service";
 import { HttpModule } from "@angular/http";
-import { NavbarComponent } from "./navbar/navbar.component";
+
+import { routing } from "./app.routing";
+
+import { AppComponent } from './app.component';
+
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { LoginComponent } from './components/login/login.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserComponent } from './components/user/user.component';
+
+import { UsersService } from "./services/users/users.service";
+import { UserService } from "./services/user/user.service";
 
 @NgModule({
   declarations: [
     AppComponent, 
     NavbarComponent,
-    UtilisateurListeComponent
+    UsersComponent,
+    LoginComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path: 'TousLesUtilisateurs', component: UtilisateurListeComponent}], {useHash: false})
-
+    routing
   ],
-  providers: [UtilisateurService],
+  providers: [UsersService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

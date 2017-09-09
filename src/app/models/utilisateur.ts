@@ -8,6 +8,7 @@ export interface Utilisateur {
 	statut:string;
 	biographie:string;
 	popularite:number;
+	photo:string;
 	dateInscription:Date;
 	dateNaissance:Date;
 }
