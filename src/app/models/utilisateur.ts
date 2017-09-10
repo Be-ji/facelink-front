@@ -1,4 +1,4 @@
-export interface Utilisateur {
+export class Utilisateur {
     id:number;
     prenom:string;
     nom:string;

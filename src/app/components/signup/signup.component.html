@@ -1,0 +1,21 @@
+<div class="container col-md-10 col-md-offset-1 bg-custom">
+    <h1 class="text-center">Inscription</h1>
+    <div class="panel bg-custom"><hr>
+      <div class="panel-body bg-custom text-center">
+        <div class="container col-md-4 col-md-offset-4">
+          <form (ngSubmit)="addUser()">
+              <div class="form-group">
+                <label for="email">Adresse Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Adresse Email">
+              </div>
+              <div class="form-group">
+                <label for="password">Mot de Passe:</label>
+                <input type="password" class="form-control" id="password" placeholder="Mot de Passe">
+              </div>
+              <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> S'inscrire</button>
+            </form>
+      </div>
+    </div>
+      <div class="panel-footer bg-custom"></div>
+    </div>
+  </div>
