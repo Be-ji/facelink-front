@@ -3,7 +3,6 @@ export class Utilisateur {
     prenom?:string;
     nom?:string;
     motDePasse:string;
-	droit?:number;
 	email:string;
 	statut?:string;
 	biographie?:string;

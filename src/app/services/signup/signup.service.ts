@@ -7,6 +7,7 @@ import { FormGroup } from "@angular/forms";
 @Injectable()
 export class SignupService {
   url: string = 'http://localhost:8080/signup';
+  urlCheckEmail = 'http://localhost:8080/signup/checkEmail';
 
   constructor(private http: Http) { }
 
@@ -18,6 +19,16 @@ export class SignupService {
       .map(this.extractData)
       .catch(this.handleErrorObservable);
   }
+
+  checkEmail(email : string): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http
+      .post(this.urlCheckEmail, email, options)
+      .map((res: Response) => res.json());
+  }
+  
+
   private extractData(res: Response) {
     let body = res.json();
     return body.data || {};
@@ -26,5 +37,8 @@ export class SignupService {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
   }
+
+
+
 }
 

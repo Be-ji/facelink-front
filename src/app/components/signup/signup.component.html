@@ -18,18 +18,24 @@
                     <label for="motDePasse">Mot de Passe*:</label>
                     <input type="password" id="motDePasse" class="form-control" placeholder="Mot de Passe" formControlName="motDePasse">
                   </div>
-            <div class="error text-center alert alert-danger" *ngIf="utilisateur.get('motDePasse').hasError('minlength') && utilisateur.get('motDePasse').touched">
+            <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('motDePasse').hasError('minlength') && formUtilisateur.get('motDePasse').touched">
             Minimum 4 caractères.
             </div>
             <div class="form-group">
                 <label for="email">Adresse Email*:</label>
                 <input type="email" id="email" class="form-control" placeholder="Adresse Email" formControlName="email">
               </div>
-            <div class="error text-center alert alert-danger" *ngIf="utilisateur.get('email').hasError('required') && utilisateur.get('email').touched">
+            <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('email').hasError('required') && formUtilisateur.get('email').touched">
               L'adresse Email est requise.
             </div>
+            <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('email').hasError('incorrectEmailFormat') && formUtilisateur.get('email').touched">
+              Format Email incorrect.
+            </div>
+            <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('email').hasError('emailExistant') && formUtilisateur.get('email').touched">
+              Cette adresse Email est déjà prise.
+            </div>
             <br>
-          <button type="submit" class="btn btn-info bnt-lg col-md-12" [disabled]="utilisateur.invalid">S'inscrire</button>
+          <button type="submit" class="btn btn-info bnt-lg col-md-12" [disabled]="formUtilisateur.invalid">S'inscrire</button>
         </form>
       </div>
     </div>
