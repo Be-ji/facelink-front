@@ -19,17 +19,19 @@
         <tbody>
           <tr *ngFor="let utilisateur of utilisateurs" class="bg-custom-tr">
             <td class="text-center">{{utilisateur.id}}</td>
-            <td class="text-center">{{utilisateur.prenom}} {{utilisateur.nom}} </td>
+            <td class="text-center">{{utilisateur.prenom}} {{utilisateur.nom}}</td>
             <td class="text-center">{{utilisateur.email}}</td>
             <td class="text-center">
-              <a href="/utilisateur/id/{{utilisateur.id}}" class="btn btn-info btn-lg">
-                <span class="glyphicon glyphicon-eye-open"></span> Détails
-              </a>
+              <a [routerLink]="['/user', utilisateur.id]" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-eye-open"></span> Détails
+                </a>
             </td>
           </tr>
         </tbody>
       </table>
-
     </div>
+    <div class="panel-footer bg-custom">
+    </div>
+
   </div>
 </div>

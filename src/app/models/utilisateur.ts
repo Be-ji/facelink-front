@@ -1,13 +1,14 @@
-export interface Utilisateur {
+export class Utilisateur {
     id:number;
-    prenom:string;
-    nom:string;
+    prenom?:string;
+    nom?:string;
     motDePasse:string;
-	droit:number;
+	droit?:number;
 	email:string;
-	statut:string;
-	biographie:string;
+	statut?:string;
+	biographie?:string;
 	popularite:number;
+	photo?:string;
 	dateInscription:Date;
-	dateNaissance:Date;
+	dateNaissance?:Date;
 }

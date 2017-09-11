@@ -1,0 +1,52 @@
+<div class="container bg-custom">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        <img src="../../assets/images/profil/default.png" alt="Photo de profil" class="img" height=300px; width="300px">
+      </div>
+      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+        <div class="container">
+          <h1 class="h1-custom">{{utilisateur.prenom}} {{utilisateur.nom}}</h1>
+          <h4><span class="glyphicon glyphicon-briefcase"></span> {{utilisateur.statut}}</h4>
+        </div>
+        <hr>
+        <ul class="container details">
+          <li>
+            <p>Identité : {{utilisateur.prenom}} {{utilisateur.nom}}</p>
+          </li>
+          <li>
+            <p>Adresse Email : {{utilisateur.email}}</p>
+          </li>
+          <li>
+            <p>Date de Naissance : {{utilisateur.dateNaissance | date : 'dd/MM/yyyy'}}</p>
+          </li>
+          <li>
+              <p>Inscrit depuis le : {{utilisateur.dateInscription | date : 'dd/MM/yyyy à HH:mm'}}</p>
+            </li>
+            <li>
+                <p>Profil vu {{utilisateur.popularite}} fois</p>
+            </li>
+          </ul>
+        <div class="container">
+            <h3 class="h1-custom"><span class="glyphicon glyphicon-user"></span> Biographie</h3>
+          </div>
+          <hr>
+          <ul class="container details">
+              <li>
+                <p>{{utilisateur.biographie}}</p>
+              </li>
+            </ul>
+        <div class="container">
+            <h3 class="h1-custom"><span class="glyphicon glyphicon-education"></span> Expérience</h3>
+          </div>
+          <hr>
+          <ul class="container details">
+              <li>
+                <p>{{utilisateur.biographie}}</p>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <p class="text-center"><button type="button" class="btn btn-info btn-lg" (click)="onBack()"><span class="glyphicon glyphicon-backward"></span> Retourner</button></p>
+</div>
