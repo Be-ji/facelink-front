@@ -1,5 +1,5 @@
 export class Utilisateur {
-    id:number;
+    id?:number;
     prenom?:string;
     nom?:string;
     motDePasse:string;
@@ -7,8 +7,8 @@ export class Utilisateur {
 	email:string;
 	statut?:string;
 	biographie?:string;
-	popularite:number;
+	popularite?:number;
 	photo?:string;
-	dateInscription:Date;
+	dateInscription?:Date;
 	dateNaissance?:Date;
 }

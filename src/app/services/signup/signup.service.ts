@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Utilisateur } from "../../models/utilisateur";
+import { FormGroup } from "@angular/forms";
 
 @Injectable()
 export class SignupService {
