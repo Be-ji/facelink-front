@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, forwardRef, Inject } from '@angular/core';
 import { Router } from "@angular/router";
 import { Utilisateur } from "../../models/utilisateur";
 import { SignupService } from "../../services/signup/signup.service";
@@ -11,7 +11,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms"
 })
 
 export class SignupComponent implements OnInit {
-
+  
+  signupService: SignupService;
   formUtilisateur: FormGroup;
   utilisateur: Utilisateur;
 
@@ -20,15 +21,13 @@ export class SignupComponent implements OnInit {
       prenom: ['', [Validators.required]],
       nom: ['', [Validators.required]],
       motDePasse: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', Validators.compose([Validators.required, this.emailFormatValidation, this.emailExisteValidation])]
+      email: ['', Validators.compose([this.emailFormatValidation, this.emailExisteValidation])]
     });
 
   }
 
 
-
-
-  constructor(private signupService: SignupService, private fb: FormBuilder) { }
+  constructor(@Inject(forwardRef(() => SignupService)) signupService:SignupService, private fb: FormBuilder) {}
 
   addUser(): void {
     this.utilisateur = {
@@ -51,14 +50,13 @@ export class SignupComponent implements OnInit {
   }
 
   emailExisteValidation() {
-    this.signupService.checkEmail(this.formUtilisateur.controls['email'].value).subscribe(data => {
-      if (data != "1") {
-        console.log("email n'existe pas");
-        return {"emailExistant" : true};
-      } 
-        console.log("email existe pas");
+    let control = this.formUtilisateur.get('email');
+    if (control.valid && control.dirty) {
+        this.signupService.checkEmail(this.formUtilisateur.controls['email'].value).subscribe(data => {
+            if(data != 0)
+              return { "emailExistant": true };
+            })
+        }
         return null;
-    })
-    return null;
-  }
+    }
 }

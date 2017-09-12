@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Utilisateur } from "../../models/utilisateur";
-import { FormGroup } from "@angular/forms";
 
 @Injectable()
 export class SignupService {
+  
   url: string = 'http://localhost:8080/signup';
-  urlCheckEmail = 'http://localhost:8080/signup/checkEmail';
+  urlCheckEmail: string = 'http://localhost:8080/signup/checkEmail';
 
   constructor(private http: Http) { }
 
@@ -20,12 +20,11 @@ export class SignupService {
       .catch(this.handleErrorObservable);
   }
 
-  checkEmail(email : string): Observable<any> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
+  checkEmail(email:string) {
     return this.http
-      .post(this.urlCheckEmail, email, options)
-      .map((res: Response) => res.json());
+    .post(this.urlCheckEmail, email)
+    .map(this.extractData)
+    .catch(this.handleErrorObservable);
   }
   
 

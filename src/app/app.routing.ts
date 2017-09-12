@@ -12,6 +12,7 @@ const appRoutes: Routes = [
     { path: 'users', component: UsersComponent},
     { path: 'user/:id', component: UserComponent},
     { path: 'signup', component: SignupComponent},
+    { path: 'signup/checkEmail', component: SignupComponent},
     { path: '', redirectTo:'/', pathMatch:'full' },
     { path: '**', redirectTo: '/' }
 

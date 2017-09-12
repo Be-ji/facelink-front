@@ -25,9 +25,6 @@
                 <label for="email">Adresse Email*:</label>
                 <input type="email" id="email" class="form-control" placeholder="Adresse Email" formControlName="email">
               </div>
-            <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('email').hasError('required') && formUtilisateur.get('email').touched">
-              L'adresse Email est requise.
-            </div>
             <div class="error text-center alert alert-danger" *ngIf="formUtilisateur.get('email').hasError('incorrectEmailFormat') && formUtilisateur.get('email').touched">
               Format Email incorrect.
             </div>
